@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+<title>Bustracker Salamanca</title>
+    <!-- Include jQuery Mobile stylesheets -->
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<!-- Include the jQuery library -->
+<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+<!-- Include the jQuery Mobile library -->
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<link rel="stylesheet" href="css/index.css">
+</head>
+<body onload="onLoad()">
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/admob.js"></script>
+<script type="text/javascript" src="js/loader.js"></script>
+	<div id="fullpage" data-role="page">
+        <div data-role="content">
+              <div class="article-whole">
+ 			    <div data-role="header"><h2>Cuando Llega Mi Bus</h2></div>
+
+                  <span style="color: #2c2d30; font-family: Slack-Lato, appleLogo, sans-serif; font-size: 15px; line-height: 22px;">
+                      <div id="component-siri">
+                          <div id="siri-selectors">
+                              <div>
+                                  <div> Selecciona una línea:</div>
+                                  <select name="line-selector"></select>
+                              </div>
+                              <div>
+                                  <div> Selecciona una parada:</div>
+                                  <select name="stop-selector"></select>
+                              </div>
+                          </div>
+                          <div class="timetable"> Las próximas llegadas a esta parada son:</div>
+                          <br />
+                          <table class="timetable" style="width: 100%" border="1">
+                              <thead>
+                              <tr>
+                                  <th> Línea</th>
+                                  <th> Sentido</th>
+                                  <th> Espera</th>
+                              </tr>
+                              </thead>
+                              <tbody></tbody>
+                          </table>
+                      </div>
+                      <script>loadSIRI("salamanca");</script>
+                  </span>
+              </div>
+        </div>
+	</div>
+        <div>
+        </div>
+  
+</body>
+</html>
