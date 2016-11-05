@@ -6,7 +6,7 @@ versionCode = "1"
 xmlns="http://www.w3.org/ns/widgets"
 xmlns:gap="http://phonegap.com/ns/1.0"
 >
-    <name>Bus tracker Salamanca</name>
+    <name>Salamanca Bus Tracker</name>
     <description>
         Salamanca Bus App with ads.
     </description>

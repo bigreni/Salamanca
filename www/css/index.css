@@ -95,6 +95,9 @@ h1.selectLanguage {
     background-color: #d2d7d7;
 }
 
+.ui-page .ui-header {
+    background-color: MediumTurquoise;
+}
 
 
 /* Landscape layout (with min-width) */
