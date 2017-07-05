@@ -35,6 +35,19 @@ div#fullpage {
 	padding: 0;
 }
 
+select.droplist
+{
+    font-size: medium;
+	margin-bottom : 10px;
+}
+
+h2
+{
+    padding: 10px 0 10px 0;
+    background: #c6d4f8;
+    margin: 0;
+}
+
 /*a:link {
     color: #000;
     text-decoration: none;
@@ -55,49 +68,7 @@ a:active {
     text-decoration: none;
 }*/
 
-a.langOption{
-    text-decoration: none;
-}
 
-a.backButton{
-    text-decoration: initial;
-}
-
-h3.proverbTitle {
-    background-color: #ccefdb;
-}
-
-a.backButton {
-    background-color: #ccefdb;
-}
-
-p.title{
-    font-size: large;
-    font-family: Arial;
-    font-style: italic;
-    text-align: center;
-}
-
-h1.selectLanguage {
-    margin: 10px 0 10px 0;
-    /*background-color: #ccefdb;*/
-}
-
-.ui-page .ui-content .ui-listview .ui-li-desc {
-    white-space : normal;
-}
-
-.ui-page .ui-content .ui-listview .ui-li-heading {
-    white-space : normal;
-}​​
-
-.ui-page {
-    background-color: #d2d7d7;
-}
-
-.ui-page .ui-header {
-    background-color: MediumTurquoise;
-}
 
 
 /* Landscape layout (with min-width) */

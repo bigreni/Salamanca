@@ -18,11 +18,7 @@
     function initApp() {
         if (!AdMob) { alert('admob plugin not ready'); return; }
         initAd();
-        // display the banner at startup
-        if (Math.round(Math.random()) == 1)
-        { loadInterstitial(); }
-        else
-        { createSelectedBanner(); }
+        loadInterstitial();
     }
 
     function initAd() {
@@ -45,28 +41,8 @@
     }
     // optional, in case respond to events or handle error
     function registerAdEvents() {
-        /* deprecated
-        document.addEventListener('onBannerFailedToReceive', function(data){ alert('error: ' + data.error + ', reason: ' + data.reason); });
-        document.addEventListener('onBannerReceive', function(){});
-        document.addEventListener('onBannerPresent', function(){});
-        document.addEventListener('onBannerLeaveApp', function(){});
-        document.addEventListener('onBannerDismiss', function(){});
-
-        document.addEventListener('onInterstitialFailedToReceive', function(data){ alert('error: ' + data.error + ', reason: ' + data.reason); });
-        document.addEventListener('onInterstitialReceive', function(){});
-        document.addEventListener('onInterstitialPresent', function(){});
-        document.addEventListener('onInterstitialLeaveApp', function(){});
-        document.addEventListener('onInterstitialDismiss', function(){});
-        */
-
         // new events, with variable to differentiate: adNetwork, adType, adEvent
         document.addEventListener('onAdFailLoad', function (data) {
-            createSelectedBanner();
-            //alert('error: ' + data.error +
-            //        ', reason: ' + data.reason +
-            //        ', adNetwork:' + data.adNetwork +
-            //        ', adType:' + data.adType +
-            //        ', adEvent:' + data.adEvent); // adType: 'banner' or 'interstitial'
         });
         document.addEventListener('onAdLoaded', function (data) { });
         document.addEventListener('onAdPresent', function (data) { });
@@ -74,44 +50,9 @@
         document.addEventListener('onAdDismiss', function (data) { });
     }
 
-    // click button to call following functions
-    //function getSelectedAdSize() {
-    //    var i = document.getElementById("adSize").selectedIndex;
-    //    var items = document.getElementById("adSize").options;
-    //    return items[i].value;
-    //}
-    //function getSelectedPosition() {
-    //    var i = document.getElementById("adPosition").selectedIndex;
-    //    var items = document.getElementById("adPosition").options;
-    //    return parseInt(items[i].value);
-    //}
     function createSelectedBanner() {
-        //var overlap = document.getElementById('overlap').checked;
-        //var offsetTopBar = document.getElementById('offsetTopBar').checked;
-        //AdMob.createBanner( {adId:admobid.banner, overlap:overlap, offsetTopBar:offsetTopBar, adSize: getSelectedAdSize(), position:getSelectedPosition()} );
         AdMob.createBanner({adId:admobid.banner});
     }
-    //function createBannerOfGivenSize() {
-    //    var w = document.getElementById('w').value;
-    //    var h = document.getElementById('h').value;
-
-    //    AdMob.createBanner({ adId: admobid.banner,
-    //        adSize: 'CUSTOM', width: w, height: h,
-    //        position: getSelectedPosition()
-    //    });
-    //}
-    //function showBannerAtSelectedPosition() {
-    //    AdMob.showBanner(getSelectedPosition());
-    //}
-    //function showBannerAtGivenXY() {
-    //    var x = document.getElementById('x').value;
-    //    var y = document.getElementById('y').value;
-    //    AdMob.showBannerAtXY(x, y);
-    //}
-    //function prepareInterstitial() {
-    //    var autoshow = document.getElementById('autoshow').checked;
-    //    AdMob.prepareInterstitial({ adId: admobid.interstitial, autoShow: autoshow });
-    //}
 
     function loadInterstitial() {
         AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: false, autoShow: true });
@@ -120,25 +61,9 @@
 
    function checkFirstUse()
     {
-        var currentVersion = 2;
-        var p = window.localStorage.getItem("currentVersion");
-        if (p == null) //App downloaded first time
-        {
-//Spanish
-            navigator.notification.alert('Para ver el menú del teléfono, por favor, arrastra la pantalla desde arriba hacia abajo o desde abajo hacia arriba.', initApp, 'Gracias por descargar la app', 'OK');
-            window.localStorage.setItem("currentVersion", currentVersion);
-        }
-        else if(p < currentVersion) //if app upgraded
-        {
-//Spanish
-            navigator.notification.alert('Para ver el menú del teléfono, por favor, arrastra la pantalla desde arriba hacia abajo o desde abajo hacia arriba.', initApp, 'Gracias por actualizar la app', 'OK');
-            window.localStorage.setItem("currentVersion", currentVersion);            
-        }
-        else
-        {
-            askRating();
+            $(".dropList").select2();
             initApp();
-        }
+            askRating();
     }
 
 function askRating()
