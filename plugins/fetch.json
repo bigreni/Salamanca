@@ -2,12 +2,12 @@
   "cordova-plugin-admobpro": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-admobpro"
+      "id": "cordova-plugin-admobpro@^8.13.1"
     },
     "is_top_level": true,
     "variables": {
-      "ADMOB_ANDROID_APP_ID": "ca-app-pub-1855415514372943~9063671314",
-      "PLAY_SERVICES_VERSION": "20.4.0"
+      "PLAY_SERVICES_VERSION": "20.4.0",
+      "ADMOB_ANDROID_APP_ID": "ca-app-pub-9249695405712287~3022120369"
     }
   },
   "cordova-plugin-device": {
