@@ -16,7 +16,10 @@
   },
   "cordova": {
     "plugins": {
-      "cordova-plugin-admobpro": {},
+      "cordova-plugin-admobpro": {
+        "PLAY_SERVICES_VERSION": "20.4.0",
+        "ADMOB_ANDROID_APP_ID": "ca-app-pub-9249695405712287~3022120369"
+      },
       "cordova-plugin-device": {},
       "cordova-plugin-apprate": {},
       "cordova-plugin-geolocation": {},
